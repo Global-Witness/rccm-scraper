@@ -7,7 +7,7 @@ class RccmSpider(scrapy.Spider):
         for id_number in list(range(
             self.settings.getint('MIN_ENTITY_ID'), self.settings.getint('MAX_ENTITY_ID') + 1)):
             yield scrapy.Request(
-                url = 'https://rccm.cd/rccm/rest/entities/ent.{office_code}.{entity_type_code}.{entity_id}' \
+                url = 'https://rccm.cd/rccm/rest/entities/ent.{office_code}.{entity_type_code}.{id_number}' \
                     .format(
                         office_code = self.settings.get('OFFICE_CODE'),
                         entity_type_code = self.settings.get('ENTITY_TYPE_CODE'),
