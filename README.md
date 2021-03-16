@@ -18,9 +18,11 @@ The scraper is written using the [Scrapy](https://scrapy.org/) framework and is 
 
 The most useful API endpoint for scraping is located at `https://rccm.cd/rccm/rest/entities/`. When followed by an entity ID (see below), it returns a single 'entity' from the RCCM database in JSON format.
 
+Counts of the total numbers of entities of different types in the underlying database can be obtained using the `https://rccm.cd/rccm/rest/entities/dictionaries/stats` endpoint—these can be useful for validating the completeness of any scraped data.
+
 ## Entity ID format
 
-The API serves up two distinct entity types: *acteurs économiques* (code `act`) and *personnes naturelles* (`pna`). Entities are also divided among RCCM offices: Kinshasa/Gombe (`kng`), Kinshasa/Matete (`knm`), Lubumbashi (`lsh`) and Kisangani (`kis`). Together with an ID number, these attributes form a unique ID of the form `ent.[office code].[entity code].[ID number]`; for example, `ent.kng.act.45403`. ID numbers are roughly but not strictly sequential: iterating through them seems to result in all entities being captured, but there are small gaps. As of 16 March 2021, the highest valid ID numbers for each entity type and office appeared to be as follows.
+The API serves up two distinct entity types: *acteurs économiques* (code `act`) and *personnes naturelles* (`pna`). Entities are also divided among RCCM offices: Kinshasa/Gombe (`kng`), Kinshasa/Matete (`knm`), Lubumbashi (`lsh`), Kisangani (`kis`), Bukavu (`bkv`), Goma (`gom`) and Kananga (? `kga`). Together with an ID number, these attributes form a unique ID of the form `ent.[office code].[entity code].[ID number]`; for example, `ent.kng.act.45403`. ID numbers are roughly but not strictly sequential: iterating through them seems to result in all entities being captured, but there are small gaps. As of 16 March 2021, the highest valid ID numbers for each entity type and office appeared to be as follows.
 
 | Entity type | Office | Highest ID number |
 |-------------|--------|-------------------|
