@@ -14,6 +14,8 @@ The scraper is written using the [Scrapy](https://scrapy.org/) framework and is 
 | ENTITY_TYPE_CODE | The code for the relevant entity type          |
 | BEARER_TOKEN     | A valid bearer token for a logged-in RCCM user |
 
+An even simpler script, `test-ids.sh`, can be used for determining the likely ranges of different ID numbers (see below)—it just submits a series of three-letter search terms to the RCCM website and returns the matching entity IDs.
+
 ## Endpoints, requests and responses
 
 The most useful API endpoint for scraping is located at `https://rccm.cd/rccm/rest/entities/`. When followed by an entity ID (see below), it returns a single 'entity' from the RCCM database in JSON format.
@@ -22,18 +24,7 @@ Counts of the total numbers of entities of different types in the underlying dat
 
 ## Entity ID format
 
-The API serves up two distinct entity types: *acteurs économiques* (code `act`) and *personnes naturelles* (`pna`). Entities are also divided among RCCM offices: Kinshasa/Gombe (`kng`), Kinshasa/Matete (`knm`), Lubumbashi (`lsh`), Kisangani (`kis`), Bukavu (`bkv`), Goma (`gom`) and Kananga (? `kga`). Together with an ID number, these attributes form a unique ID of the form `ent.[office code].[entity code].[ID number]`; for example, `ent.kng.act.45403`. ID numbers are roughly but not strictly sequential: iterating through them seems to result in all entities being captured, but there are small gaps. As of 16 March 2021, the highest valid ID numbers for each entity type and office appeared to be as follows.
-
-| Entity type | Office | Highest ID number |
-|-------------|--------|-------------------|
-| act         | kng    | TBD               |
-| act         | knm    | TBD               |
-| act         | lsh    | TBD               |
-| act         | kis    | TBD               |
-| pna         | kng    | TBD               |
-| pna         | knm    | TBD               |
-| pna         | lsh    | TBD               |
-| pna         | kis    | TBD               |
+The API serves up several distinct entity types: *acteurs économiques* (code `act`), *personnes naturelles* (`pna`) and *comptes annuels* (`can`). Entities are also divided among RCCM offices: Kinshasa/Gombe (`kng`), Kinshasa/Matete (`knm`), Lubumbashi (`lsh`), Kisangani (`kis`), Bukavu (`bkv`), Goma (`gom`), Kolwezi (`kwz`) and Kananga (`kga`). Together with an ID number, these attributes form a unique ID of the form `ent.[office code].[entity code].[ID number]`; for example, `ent.kng.act.45403`. ID numbers are roughly but not strictly sequential: iterating through them seems to result in all entities being captured, but there are small gaps.
 
 ## Authentication
 
