@@ -1,0 +1,62 @@
+62334550.0e7639093c833bd0220d8cfccd7c18efa5188018:
+  label: dirigeants.csv
+  info_url: https://aleph.occrp.org/entities/62334550.0e7639093c833bd0220d8cfccd7c18efa5188018
+  query:
+    entities:
+      Person:
+        schema: Person
+        keys:
+          - civilite
+          - prenom
+          - nom
+          - postNom
+          - dateNaissance
+        properties:
+          alias:
+            column: postNom
+          email:
+            column: email
+          phone:
+            column: telephoneMobile
+          title:
+            column: civilite
+          gender:
+            column: sexe
+          address:
+            column: adresse
+          idNumber:
+            column: numeroPieceIdentite
+          lastName:
+            column: nom
+          birthDate:
+            column: dateNaissance
+          firstName:
+            column: prenom
+          birthPlace:
+            column: lieuNaissance
+          mainCountry:
+            column: paysNaissance
+          nationality:
+            column: nationalite
+      Company:
+        schema: Company
+        keys:
+          - rccm
+        properties: {}
+      Directorship:
+        schema: Directorship
+        keys:
+          - civilite
+          - prenom
+          - nom
+          - postNom
+          - dateNaissance
+          - rccm
+        properties:
+          director:
+            entity: Person
+            required: true
+          organization:
+            entity: Company
+            required: true
+        key_literal: Directorship

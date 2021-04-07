@@ -1,0 +1,54 @@
+62334551.168c6509ab608eb846a14f8a025d7b3dc1536969:
+  label: personnes-physiques.csv
+  info_url: https://aleph.occrp.org/entities/62334551.168c6509ab608eb846a14f8a025d7b3dc1536969
+  query:
+    entities:
+      Person:
+        schema: Person
+        keys:
+          - prenom
+          - nom
+          - postNom
+          - dateNaissance
+          - sexe
+        properties:
+          alias:
+            column: postNom
+          title:
+            column: civilite
+          gender:
+            column: sexe
+          lastName:
+            column: nom
+          birthDate:
+            column: dateNaissance
+          firstName:
+            column: prenom
+          birthPlace:
+            column: lieuNaissance
+          mainCountry:
+            column: paysNaissance
+          nationality:
+            column: nationalite
+      Company:
+        schema: Company
+        keys:
+          - rccm
+        properties: {}
+      Ownership:
+        schema: Ownership
+        keys:
+          - prenom
+          - nom
+          - postNom
+          - dateNaissance
+          - sexe
+          - rccm
+        properties:
+          asset:
+            entity: Company
+            required: true
+          owner:
+            entity: Person
+            required: true
+        key_literal: Ownership

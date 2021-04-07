@@ -18,6 +18,16 @@ The scraper is written using the [Scrapy](https://scrapy.org/) framework and is 
 An even simpler script, `test-ids.sh`, can be used for determining the likely ranges of different ID numbers (see below)—it just submits a series of three-letter search terms to the RCCM website and returns the matching entity IDs.
 
 
+## Extraction/processing scripts
+
+The shells scripts in this repository beginning with `extract-` can be used to generate CSV files from the scraped JSON data. Each one takes the full set of JSON as standard input (e.g. from `cat data/act/*.jsonl`) and writes a CSV to standard output. They produce files for companies, owners, directors and `personnes physiques`, the latter being a special type of owner (something like a sole trader in UK terminology).
+
+
+## Follow the Money/Aleph mappings
+
+The `mappings` directory contains four YAML files specifying mappings between the CSV files produced using the `extract-` scripts and the [Follow the Money](https://docs.alephdata.org/developers/followthemoney) entity/relationship schema. These can be used to import the data into [Aleph](https://docs.alephdata.org/).
+
+
 ## Endpoints, requests and responses
 
 The most useful API endpoint for scraping is located at `https://rccm.cd/rccm/rest/entities/`. When followed by an entity ID (see below), it returns a single 'entity' from the RCCM database in JSON format.

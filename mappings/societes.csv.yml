@@ -1,0 +1,28 @@
+62334552.a294371121c3ed9f09ce66846e17f97b19fe1afd:
+  label: societes.csv
+  info_url: https://aleph.occrp.org/entities/62334552.a294371121c3ed9f09ce66846e17f97b19fe1afd
+  query:
+    entities:
+      Company:
+        schema: Company
+        keys:
+          - rccm
+        properties:
+          name:
+            column: nom
+          alias:
+            column: sigle
+          email:
+            column: email
+          phone:
+            column: telephone
+          sector:
+            column: secteurActivite
+          address:
+            column: adresseSiegeSocial
+          classification:
+            column: formeJuridiqueN1
+          incorporationDate:
+            column: dateImmatriculationRCCM
+          registrationNumber:
+            column: rccm
