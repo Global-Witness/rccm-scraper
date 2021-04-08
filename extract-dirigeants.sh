@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "rccm,civilite,prenom,nom,postNom,sexe,dateNaissance,paysNaissance,lieuNaissance,numeroPieceIdentite,adresse,email,telephoneMobile"
+echo "rccm,nomEtPrenom,civilite,prenom,nom,postNom,sexe,dateNaissance,nationalite,paysNaissance,lieuNaissance,numeroPieceIdentite,adresse,email,telephoneMobile"
 jq -r "
   .details |
   {
@@ -8,12 +8,15 @@ jq -r "
   } |
   [
     .rccm,
+    (.person.personne.prenom // null) + \" \" +
+      (.person.personne.nom // null),
     (.person.personne.civilite.value // null),
     (.person.personne.prenom // null),
     (.person.personne.nom // null),
     (.person.personne.postNom // null),
     (.person.personne.sexe.value // null),
     (.person.personne.dateNaissance // null),
+    (.person.personne.nationalite.value // null),
     (.person.personne.paysNaissance.value // null),
     (.person.personne.lieuNaissance // null),
     (.person.personne.numeroPieceIdentite // null),
