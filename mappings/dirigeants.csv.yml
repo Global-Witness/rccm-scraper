@@ -1,6 +1,6 @@
-62334550.0e7639093c833bd0220d8cfccd7c18efa5188018:
+62362618.2c6eca1c9df04a3daea3d052a3f590c3bebf0f7c:
   label: dirigeants.csv
-  info_url: https://aleph.occrp.org/entities/62334550.0e7639093c833bd0220d8cfccd7c18efa5188018
+  info_url: https://aleph.occrp.org/entities/62362618.2c6eca1c9df04a3daea3d052a3f590c3bebf0f7c
   query:
     entities:
       Person:
@@ -12,6 +12,8 @@
           - postNom
           - dateNaissance
         properties:
+          name:
+            column: nomEtPrenom
           alias:
             column: postNom
           email:

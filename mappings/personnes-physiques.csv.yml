@@ -1,6 +1,6 @@
-62334551.168c6509ab608eb846a14f8a025d7b3dc1536969:
+62363409.3524d0254a9588c770a4d7ef1081588129d43af1:
   label: personnes-physiques.csv
-  info_url: https://aleph.occrp.org/entities/62334551.168c6509ab608eb846a14f8a025d7b3dc1536969
+  info_url: https://aleph.occrp.org/entities/62363409.3524d0254a9588c770a4d7ef1081588129d43af1
   query:
     entities:
       Person:
@@ -12,6 +12,8 @@
           - dateNaissance
           - sexe
         properties:
+          name:
+            column: nomEtPrenom
           alias:
             column: postNom
           title:

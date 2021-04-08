@@ -1,6 +1,6 @@
-62334553.6db56e9c1d387ef8458f0a944c7f37f40ca9bd63:
+62362621.aac09bd9f5cb97f8763512d1efe52ce27093f585:
   label: associes.csv
-  info_url: https://aleph.occrp.org/entities/62334553.6db56e9c1d387ef8458f0a944c7f37f40ca9bd63
+  info_url: https://aleph.occrp.org/entities/62362621.aac09bd9f5cb97f8763512d1efe52ce27093f585
   query:
     entities:
       Person:
@@ -12,6 +12,8 @@
           - postNom
           - dateNaissance
         properties:
+          name:
+            column: nomEtPrenom
           alias:
             column: postNom
           email:
