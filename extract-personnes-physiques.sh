@@ -11,7 +11,7 @@ jq -r "
     ((.[] | .personnePhysiqueAssujettie.value.postNom) // null),
     ((.[] | .personnePhysiqueAssujettie.value.sexe.value) // null),
     ((.[] | .personnePhysiqueAssujettie.value.dateNaissance) // null),
-    ((.[] | .personnePhysiqueAssujettie.nationalite.value) // null),
+    ((.[] | .personnePhysiqueAssujettie.value.nationalite.value) // null),
     ((.[] | .personnePhysiqueAssujettie.value.paysNaissance.value) // null),
     ((.[] | .personnePhysiqueAssujettie.value.lieuNaissance) // null)
   ] |
